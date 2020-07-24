@@ -2,7 +2,7 @@
 $guess = "";
 $message = false;
 
-if (isset($_POST["guess"]) && strlen($_POST["guess"]) > 0) {
+if (isset($_POST["guess"])) {
     $guess = $_POST["guess"] + 0;
     if ($guess == 42) {
         $message = "You guessed it right!";
@@ -29,10 +29,11 @@ if (isset($_POST["guess"]) && strlen($_POST["guess"]) > 0) {
     ?>
     <form method="post">
         <label for="num">Input number:</label>
-        <input type="text" name="guess" id="num" size="5" />
+        <input type="text" name="guess" id="num" size="5" <?php echo "value='$guess'" ?> />
         <br>
         <input type="submit" value="Submit" />
     </form>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/PostRedirectGet_DoubleSubmitProblem.png" alt="Wiki Image" />
 </body>
 
 </html>
